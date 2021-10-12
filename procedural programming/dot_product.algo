@@ -1,0 +1,24 @@
+ALGORITHM dot_product
+VAR
+    vector1 , vector2 : array_of_integer;
+    i, n : INTEGER;
+BEGIN
+    PROCEDURE calcul(vector1,vector2)
+    VAR
+       result = 0;
+    BEGIN
+        FOR i FROM 0 TO vector1.length-1  STEP step 1 DO
+          result = vector1[i] * vector2[i]
+        END_FOR
+       IF (result = 0) THEN
+           write ('orthogonal')
+       ELSE
+           write ('not orthogonal')
+       END_IF
+    END
+    FOR i FROM 1 TO n STEP step 1 DO
+        read(vector1);
+        read(vector2);
+        calcul(vector1,vector2)
+    END_FOR
+END
